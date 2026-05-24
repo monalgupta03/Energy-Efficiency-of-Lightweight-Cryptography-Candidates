@@ -24,7 +24,13 @@ The Cortex-M4 adds: A Floating Point Unit (FPU), DSP instructions (single-cycle 
 
 
 ![pic](/docs/01%20-%20Microcontroller%20Units/Images/photo_2026-05-22_15-43-02.jpg)
-* Fig 1: Nucleo-F411RE board (Nucleo-64 type) with a STM32F411RET6 microcontroller
+* 
+
+<p align="center">
+  <img src="/docs/01%20-%20Microcontroller%20Units/Images/Nucleo Boeard.jpg" width="400"/>
+  <br>
+  <em>Fig 1: Nucleo-F411RE board (Nucleo-64 type) with a STM32F411RET6 microcontroller</em>
+</p>
 
 
 
