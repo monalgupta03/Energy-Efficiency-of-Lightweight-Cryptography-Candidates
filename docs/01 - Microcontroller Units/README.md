@@ -59,8 +59,8 @@ STM32  F   4   11  R   E   T   6
 
 | Component | Use | Reference Image |
 |-----------|-----|-----------------|
-| CN-1: ST-Link USB Connector | Connects board to PC | ![CN1](/docs/01%20-%20Microcontroller%20Units/Images/01%20CN1.jpg) |
-| CN-2: ST-LINK/Nucleo Selector Jumper | Controls whether the ST-LINK on this board programs this board's own STM32 or an external target. For dessertation, it is left default, it bridges all pins so the onboard ST-LINK programs the onboard STM32 | ![CN2](/docs/01%20-%20Microcontroller%20Units/Images/02%20CN2.jpg)
+| CN-1: ST-Link USB Connector | Connects board to PC | <img src="/docs/01%20-%20Microcontroller%20Units/Images/01%20CN1.jpg" width="120"> |
+| CN-2: ST-LINK/Nucleo Selector Jumper | Controls whether the ST-LINK on this board programs this board's own STM32 or an external target. For dessertation, it is left default, it bridges all pins so the onboard ST-LINK programs the onboard STM32 | <img src="/docs/01%20-%20Microcontroller%20Units/Images/02%20CN2.jpg" width="120"> |
 
 
 
