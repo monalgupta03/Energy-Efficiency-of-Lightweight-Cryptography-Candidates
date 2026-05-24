@@ -22,14 +22,14 @@ The Cortex-M4 adds: A Floating Point Unit (FPU), DSP instructions (single-cycle 
 | SRAM | 128 Kb |
 | Package | LQFP 64 Pin |
 | Operating Voltage | 1.7 - 3.6 V |
-| Timers | 11 (6 16 bit, 2 32 bit, 2 watchdog, 1 SysTick) |
+| Timers | 11 (16 bit (6), 32 bit (2), Watchdog (2), SysTick (1)) |
 | GPIO Pins (General Purpose I/O) | Upto 81 out of which 50 available ?? |
 | Temp | -40°C to 85°C |
 
  <br>
 
 <p align="center">
-  <img src="/docs/01 - Microcontroller Units/Images/Nucleo Board.jpg" width="400"/>
+  <img src="/docs/01 - Microcontroller Units/Images/Board_Img.jpg" width="400"/>
   <br>
   <em>Fig 1: Nucleo-F411RE board (Nucleo-64 type) with a STM32F411RET6 microcontroller</em>
 </p>
@@ -52,10 +52,15 @@ STM32  F   4   11  R   E   T   6
 ## Hardware Layout / Components
 
 <p align="center">
-  <img src="/docs/01 - Microcontroller Units/Images/Board_Layout_Top.png" width="400"/>
+  <img src="/docs/01 - Microcontroller Units/Images/Board_Layout_Top.png" width="600"/>
   <br>
   <em>Fig 2: Board Layout - Top </em>
 </p>
+
+| Component | Use | Reference Image |
+|-----------|-----|-----------------|
+| CN-1: ST-Link USB Connector | Connects board to PC | ![CN1](/docs/01%20-%20Microcontroller%20Units/Images/01%20CN1.jpg) |
+| CN-2: ST-LINK/Nucleo Selector Jumper | Controls whether the ST-LINK on this board programs this board's own STM32 or an external target. For dessertation, it is left default, it bridges all pins so the onboard ST-LINK programs the onboard STM32 | ![CN2](/docs/01%20-%20Microcontroller%20Units/Images/02%20CN2.jpg)
 
 
 
@@ -63,8 +68,10 @@ STM32  F   4   11  R   E   T   6
 ## References
 
 1. [um1724-stm32-nucleo64-boards-mb1136-stmicroelectronics.pdf](/docs/00%20-%20References/um1724-stm32-nucleo64-boards-mb1136-stmicroelectronics.pdf)
-2. Arm Cortex-M4 Processor Technical Reference Manual Revision r0p1. Available at: https://developer.arm.com/documentation/100166/0001/
-3. STMicroelectronics (2024) STM32F411 Product Page. Available at: https://www.st.com/en/microcontrollers-microprocessors/stm32f411.html
+2. Arm Cortex-M4 Processor Technical Reference Manual Revision r0p1.
+Available at: https://developer.arm.com/documentation/100166/0001/
+3. STMicroelectronics (2024) STM32F411 Product Page.
+Available at: https://www.st.com/en/microcontrollers-microprocessors/stm32f411.html
 4. [STMicroelectronics (2023) STM32F411xC/xE Datasheet](/docs/00%20-%20References/stm32f411re.pdf)
 5. https://en.wikipedia.org/wiki/Microcontroller
 6. https://en.wikipedia.org/wiki/STM32
