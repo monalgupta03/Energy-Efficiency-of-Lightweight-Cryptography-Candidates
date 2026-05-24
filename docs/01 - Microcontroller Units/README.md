@@ -15,7 +15,7 @@ The Cortex-M4 adds: A Floating Point Unit (FPU), DSP instructions (single-cycle 
 ### Specifications
 
 | Feature | Specification |
-
+|---------|---------------|
 | Core | ARM Cortex M4 |
 | Maximum Clock Speed | 100MHz |
 | Flash Memory | 512 Kb |
@@ -28,5 +28,4 @@ The Cortex-M4 adds: A Floating Point Unit (FPU), DSP instructions (single-cycle 
 ## References
 
 1. https://www.st.com/resource/en/user_manual/um1724-stm32-nucleo64-boards-mb1136-stmicroelectronics.pdf
-1. [https://en.wikipedia.org/wiki/Microcontroller](https://en.wikipedia.org/wiki/Microcontroller)
 2. https://en.wikipedia.org/wiki/Microcontroller
