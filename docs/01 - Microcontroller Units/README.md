@@ -21,17 +21,27 @@ The Cortex-M4 adds: A Floating Point Unit (FPU), DSP instructions (single-cycle 
 | Flash Memory | 512 Kb |
 | SRAM | 128 Kb |
 | Package | LQFP 64 Pin |
-
-
-![pic](/docs/01%20-%20Microcontroller%20Units/Images/photo_2026-05-22_15-43-02.jpg)
-* 
+ 
 
 <p align="center">
-  <img src="/docs/01%20-%20Microcontroller%20Units/Images/Nucleo Boeard.jpg" width="400"/>
+  <img src="/docs/01%20-%20Microcontroller%20Units/Images/Nucleo Board.jpg" width="400"/>
   <br>
   <em>Fig 1: Nucleo-F411RE board (Nucleo-64 type) with a STM32F411RET6 microcontroller</em>
 </p>
 
+
+```
+STM32  F   4   11  R   E   T   6
+  |    |   |    |  |   |   |   |
+  |    |   |    |  |   |   |   └── Temperature range (6 = -40°C to 85°C)
+  |    |   |    |  |   |   └────── Package (T = LQFP)
+  |    |   |    |  |   └────────── Flash size (E = 512KB)
+  |    |   |    |  └────────────── Pin count (R = 64 pins)
+  |    |   |    └───────────────── Specific device number
+  |    |   └────────────────────── Series (4 = F4 series)
+  |    └────────────────────────── Product type (F = Foundation/mainstream)
+  └─────────────────────────────── STMicroelectronics 32-bit MCU
+  ```
 
 
 
