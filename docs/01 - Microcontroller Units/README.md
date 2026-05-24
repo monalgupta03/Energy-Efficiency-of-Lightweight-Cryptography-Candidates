@@ -57,9 +57,6 @@ STM32  F   4   11  R   E   T   6
   <em>Fig 2: Board Layout - Top </em>
 </p>
 
-| | |
-|---|---|
-| <img src="/docs/01 - Microcontroller Units/Images/Board_Layout_Top.png" width="550"><br><em>Fig 2: Board Layout - Top </em> | <img src="/docs/01 - Microcontroller Units/Images/pinDiag.jpg" width="550"><br><em>Fig 3: Arduino and ST morpho layout</em> |
 
 | Component | Use | Reference Image |
 |-----------|-----|-----------------|
@@ -79,6 +76,14 @@ STM32  F   4   11  R   E   T   6
 | X1: 8MHz Crystal Oscillator | Provides the external clock signal that is used by STM32 as its reference to generate its internal 100MHz clock via a PLL (Phase Locked Loop) circuit | <img src="/docs/01 - Microcontroller Units/Images/14 X1.jpg" width="120"> |
 | X2: 32kHz Crystal | Powers RTC (Real Time Clock -> a low power clock that keeps time even when the main chip is in sleep mode)| <img src="/docs/01 - Microcontroller Units/Images/15 X2.jpg" width="120"> |
 | SB2: 3.3V Regulator Output | Controls the 3.3V power output on the Arduino headers. Default state is on. Used by LPM01A to understand the supply voltage during measurement. | <img src="/docs/01 - Microcontroller Units/Images/16 SB2.jpg" width="120"> |
+
+<br>
+
+<p align="center">
+  <img src="/docs/01 - Microcontroller Units/Images/pinDiag.jpg" width="600"/>
+  <br>
+  <em> Fig 3: Arduino and ST morpho layout </em>
+</p>
 
 
 ## References
