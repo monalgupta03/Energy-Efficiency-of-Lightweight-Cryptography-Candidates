@@ -21,10 +21,15 @@ The Cortex-M4 adds: A Floating Point Unit (FPU), DSP instructions (single-cycle 
 | Flash Memory | 512 Kb |
 | SRAM | 128 Kb |
 | Package | LQFP 64 Pin |
- 
+| Operating Voltage | 1.7 - 3.6 V |
+| Timers | 11 (6 16 bit, 2 32 bit, 2 watchdog, 1 SysTick) |
+| GPIO Pins (General Purpose I/O) | Upto 81 out of which 50 available ?? |
+| Temp | -40°C to 85°C |
+
+ <br>
 
 <p align="center">
-  <img src="/docs/01%20-%20Microcontroller%20Units/Images/Nucleo Board.jpg" width="400"/>
+  <img src="/docs/01 - Microcontroller Units/Images/Nucleo Board.jpg" width="400"/>
   <br>
   <em>Fig 1: Nucleo-F411RE board (Nucleo-64 type) with a STM32F411RET6 microcontroller</em>
 </p>
@@ -42,6 +47,15 @@ STM32  F   4   11  R   E   T   6
   |    └────────────────────────── Product type (F = Foundation/mainstream)
   └─────────────────────────────── STMicroelectronics 32-bit MCU
   ```
+
+
+## Hardware Layout / Components
+
+<p align="center">
+  <img src="/docs/01 - Microcontroller Units/Images/Board_Layout_Top.png" width="400"/>
+  <br>
+  <em>Fig 2: Board Layout - Top </em>
+</p>
 
 
 
