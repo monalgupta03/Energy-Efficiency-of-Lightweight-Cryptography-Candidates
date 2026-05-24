@@ -57,6 +57,10 @@ STM32  F   4   11  R   E   T   6
   <em>Fig 2: Board Layout - Top </em>
 </p>
 
+| | |
+|---|---|
+| <img src="/docs/01 - Microcontroller Units/Images/Board_Layout_Top.png" width="550"><br><em>Fig 2: Board Layout - Top </em> | <img src="/docs/01 - Microcontroller Units/Images/pinDiag.jpg" width="550"><br><em>Fig 3: Arduino and ST morpho layout</em> |
+
 | Component | Use | Reference Image |
 |-----------|-----|-----------------|
 | CN-1: ST-Link USB Connector | Connects board to PC | <img src="/docs/01%20-%20Microcontroller%20Units/Images/01%20CN1.jpg" width="120"> |
@@ -67,7 +71,14 @@ STM32  F   4   11  R   E   T   6
 | JP6: IDD Jumper | Power path switch for energy measurement. When removed, all power to the STM32 flows through the LPM01A's measurement circuit | <img src="/docs/01 - Microcontroller Units/Images/06 JP6.jpg" width="120"> |
 | B1: USER Button | Blue button, connected to GPIO pin PC13. Can read its state in code | <img src="/docs/01 - Microcontroller Units/Images/07 UserButton.jpg" width="120"> |
 |B2: RESET Button | Black button, resets STM32. Program restarts, Flash memory is preserved | <img src="/docs/01 - Microcontroller Units/Images/08 ResetButton.jpg" width="120"> |
-| 
+| LD1: Red/Green LED (COM) | ST-LINK communication indicator. Cannot be controlled |   |
+| LD2: Green LED | Connected to GPIO PA5. Can be control by code |   |
+| LD3: Red LED | Indicates the board has power. Always on when USB is connected |  |
+| CN5, CN6, CN8, CN9:  Arduino Headers | Standard Arduino pin layout | <img src="/docs/01 - Microcontroller Units/Images/12 Arduino.jpg" width="120"> |
+| CN7, CN10: ST Morpho Headers | Used when pins not available on the Arduino headers are needed. These expose every GPIO of the STM32F411RE | <img src="/docs/01 - Microcontroller Units/Images/13 StMorphos.jpg" width="120"> |
+| X1: 8MHz Crystal Oscillator | Provides the external clock signal that is used by STM32 as its reference to generate its internal 100MHz clock via a PLL (Phase Locked Loop) circuit | <img src="/docs/01 - Microcontroller Units/Images/14 X1.jpg" width="120"> |
+| X2: 32kHz Crystal | Powers RTC (Real Time Clock -> a low power clock that keeps time even when the main chip is in sleep mode)| <img src="/docs/01 - Microcontroller Units/Images/15 X2.jpg" width="120"> |
+| SB2: 3.3V Regulator Output | Controls the 3.3V power output on the Arduino headers. Default state is on. Used by LPM01A to understand the supply voltage during measurement. | <img src="/docs/01 - Microcontroller Units/Images/16 SB2.jpg" width="120"> |
 
 
 ## References
