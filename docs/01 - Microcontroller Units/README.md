@@ -29,7 +29,7 @@ The Cortex-M4 adds: A Floating Point Unit (FPU), DSP instructions (single-cycle 
  <br>
 
 <p align="center">
-  <img src="/docs/01 - Microcontroller Units/Images/Board_Img.jpg" width="400"/>
+  <img src="/docs/01 - Microcontroller Units/Images/Board_Img.jpg" width="600"/>
   <br>
   <em>Fig 1: Nucleo-F411RE board (Nucleo-64 type) with a STM32F411RET6 microcontroller</em>
 </p>
@@ -80,7 +80,7 @@ STM32  F   4   11  R   E   T   6
 <br>
 
 <p align="center">
-  <img src="/docs/01 - Microcontroller Units/Images/pinDiag.jpg" width="600"/>
+  <img src="/docs/01 - Microcontroller Units/Images/pinDiag.jpg" width="400"/>
   <br>
   <em> Fig 3: Arduino and ST morpho layout </em>
 </p>
