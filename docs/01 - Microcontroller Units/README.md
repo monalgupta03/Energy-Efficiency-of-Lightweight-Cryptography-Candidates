@@ -61,16 +61,17 @@ STM32  F   4   11  R   E   T   6
 |-----------|-----|-----------------|
 | CN-1: ST-Link USB Connector | Connects board to PC | <img src="/docs/01%20-%20Microcontroller%20Units/Images/01%20CN1.jpg" width="120"> |
 | CN-2: ST-LINK/Nucleo Selector Jumper | Controls whether the ST-LINK on this board programs this board's own STM32 or an external target. For dessertation, it is left default, it bridges all pins so the onboard ST-LINK programs the onboard STM32 | <img src="/docs/01%20-%20Microcontroller%20Units/Images/02%20CN2.jpg" width="120"> |
-
-
+| CN-4: Serial Wire Debug | External debug interface | <img src="/docs/01 - Microcontroller Units/Images/03 CN4.jpg" width="120"> |
+| U2: ST-Link Chip | The square chip at the top half of board, aka programmer/debugger chip. Used to flash code. Talks to PC via USB and programs STM32 via SWD | <img src="/docs/01 - Microcontroller Units/Images/04 U2.jpg" width="120">
+| U5: STM32F411RE | Main microcontroller, with 64 pins. Has all timers, GPIO, Flash, RAM, etc | <img src="/docs/01 - Microcontroller Units/Images/05 STM MCU.jpg" width="120"> |
 
 
 ## References
 
 1. [um1724-stm32-nucleo64-boards-mb1136-stmicroelectronics.pdf](/docs/00%20-%20References/um1724-stm32-nucleo64-boards-mb1136-stmicroelectronics.pdf)
-2. Arm Cortex-M4 Processor Technical Reference Manual Revision r0p1.
+2. Arm Cortex-M4 Processor Technical Reference Manual Revision r0p1.<br>
 Available at: https://developer.arm.com/documentation/100166/0001/
-3. STMicroelectronics (2024) STM32F411 Product Page.
+3. STMicroelectronics (2024) STM32F411 Product Page.<br>
 Available at: https://www.st.com/en/microcontrollers-microprocessors/stm32f411.html
 4. [STMicroelectronics (2023) STM32F411xC/xE Datasheet](/docs/00%20-%20References/stm32f411re.pdf)
 5. https://en.wikipedia.org/wiki/Microcontroller
