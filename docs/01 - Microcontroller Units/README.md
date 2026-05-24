@@ -20,6 +20,11 @@ The Cortex-M4 adds: A Floating Point Unit (FPU), DSP instructions (single-cycle 
 | Maximum Clock Speed | 100MHz |
 | Flash Memory | 512 Kb |
 | SRAM | 128 Kb |
+| Package | LQFP 64 Pin |
+
+
+![pic](/docs/01%20-%20Microcontroller%20Units/Images/photo_2026-05-22_15-43-02.jpg)
+* Fig 1: Nucleo-F411RE board (Nucleo-64 type) with a STM32F411RET6 microcontroller
 
 
 
@@ -27,5 +32,10 @@ The Cortex-M4 adds: A Floating Point Unit (FPU), DSP instructions (single-cycle 
 
 ## References
 
-1. https://www.st.com/resource/en/user_manual/um1724-stm32-nucleo64-boards-mb1136-stmicroelectronics.pdf
-2. https://en.wikipedia.org/wiki/Microcontroller
+1. [um1724-stm32-nucleo64-boards-mb1136-stmicroelectronics.pdf](/docs/00%20-%20References/um1724-stm32-nucleo64-boards-mb1136-stmicroelectronics.pdf)
+2. Arm Cortex-M4 Processor Technical Reference Manual Revision r0p1. Available at: https://developer.arm.com/documentation/100166/0001/
+3. STMicroelectronics (2024) STM32F411 Product Page. Available at: https://www.st.com/en/microcontrollers-microprocessors/stm32f411.html
+4. [STMicroelectronics (2023) STM32F411xC/xE Datasheet](/docs/00%20-%20References/stm32f411re.pdf)
+5. https://en.wikipedia.org/wiki/Microcontroller
+6. https://en.wikipedia.org/wiki/STM32
+7. https://www.st.com/en/evaluation-tools/nucleo-f411re.html
