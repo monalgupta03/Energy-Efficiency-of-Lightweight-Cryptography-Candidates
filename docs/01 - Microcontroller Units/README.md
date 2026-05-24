@@ -2,11 +2,24 @@
 
 A Microcontroller unit (MCU) is a small computer on a single integrated circuit. It contains one or more processor cores along with memory and programmable input/output peripherals. Program memory in the form of NOR flash, OTP ROM, or ferroelectric RAM is also often included on the chip, as well as a small amount of RAM. Microcontrollers are designed for embedded applications, in contrast to the microprocessors used in personal computers or other general-purpose applications consisting of various discrete chips.
 
-<br>
-
 Unlike a Raspberry Pi, a microcontroller has no operating system. It runs one program at a time, is extremely resource constrained and has deterministic behaviour(the same code always takes the same time and energy).
 
 ## STM32F411 Nucleo-64
+
+STMicroelectronics produces the STM32 family of microcontrollers, all based on ARM Cortex-M cores.
+
+The F4 series represents the performance tier:  High clock speeds, Large memory and a capable core for running demanding algorithms like crypto primitives. 
+<br>
+The Cortex-M4 adds: A Floating Point Unit (FPU), DSP instructions (single-cycle multiply-accumulate operations). Thus well-suited for cryptographic workloads.
+
+### Specifications
+
+| Feature | Specification |
+
+| Core | ARM Cortex M4 |
+| Maximum Clock Speed | 100MHz |
+| Flash Memory | 512 Kb |
+| SRAM | 128 Kb |
 
 
 
