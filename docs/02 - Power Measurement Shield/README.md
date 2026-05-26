@@ -19,7 +19,6 @@ the LPM01A measures current (Amp) via Shunt Resistor, a small precision resistor
 Current (I) = V / R (Ohm's Law)
 
 Energy (E) = V x I x t
-
 ```
 
 ## Specifications
@@ -41,3 +40,6 @@ Energy (E) = V x I x t
 <b>Dynamic Mode</b> This captures the current waveform as it changes during algorithm execution, so every microamp change is recorded. Real-time current measurement with 100 kHz bandwidth and up to 50 mA range.
 
 
+## References
+
+1. [STMicroelectronics (2021) UM2243 — User Manual: X-NUCLEO-LPM01A STM32 Power Shield](/docs/02%20-%20Power%20Measurement%20Shield/References/um2243-stm32-power-shield-xnucleoLPM01A-stmicroelectronics.pdf)
