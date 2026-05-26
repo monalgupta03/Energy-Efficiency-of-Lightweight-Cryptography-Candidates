@@ -29,7 +29,7 @@ The Cortex-M4 adds: A Floating Point Unit (FPU), DSP instructions (single-cycle 
  <br>
 
 <p align="center">
-  <img src="/docs/01 - Microcontroller Units/Images/Board_Img.jpg" width="600"/>
+  <img src="/docs/01 - Microcontroller Units/Images/Board_Img.jpg" width="550"/>
   <br>
   <em>Fig 1: Nucleo-F411RE board (Nucleo-64 type) with a STM32F411RET6 microcontroller</em>
 </p>
@@ -61,7 +61,7 @@ STM32  F   4   11  R   E   T   6
 | Component | Use | Reference Image |
 |-----------|-----|-----------------|
 | CN-1: ST-Link USB Connector | Connects board to PC | <img src="/docs/01%20-%20Microcontroller%20Units/Images/01%20CN1.jpg" width="120"> |
-| CN-2: ST-LINK/Nucleo Selector Jumper | Controls whether the ST-LINK on this board programs this board's own STM32 or an external target. For dessertation, it is left default, it bridges all pins so the onboard ST-LINK programs the onboard STM32 | <img src="/docs/01%20-%20Microcontroller%20Units/Images/02%20CN2.jpg" width="120"> |
+| CN-2: ST-LINK/Nucleo Selector Jumper | Controls whether the ST-LINK on this board programs this board's own STM32 or an external target. For dissertation, it is left default, it bridges all pins so the onboard ST-LINK programs the onboard STM32 | <img src="/docs/01%20-%20Microcontroller%20Units/Images/02%20CN2.jpg" width="120"> |
 | CN-4: Serial Wire Debug | External debug interface | <img src="/docs/01 - Microcontroller Units/Images/03 CN4.jpg" width="120"> |
 | U2: ST-Link Chip | The square chip at the top half of board, aka programmer/debugger chip. Used to flash code. Talks to PC via USB and programs STM32 via SWD | <img src="/docs/01 - Microcontroller Units/Images/04 U2.jpg" width="120">
 | U5: STM32F411RE | Main microcontroller, with 64 pins. Has all timers, GPIO, Flash, RAM, etc | <img src="/docs/01 - Microcontroller Units/Images/05 STM MCU.jpg" width="120"> |
@@ -75,7 +75,7 @@ STM32  F   4   11  R   E   T   6
 | CN7, CN10: ST Morpho Headers | Used when pins not available on the Arduino headers are needed. These expose every GPIO of the STM32F411RE | <img src="/docs/01 - Microcontroller Units/Images/13 StMorphos.jpg" width="120"> |
 | X1: 8MHz Crystal Oscillator | Provides the external clock signal that is used by STM32 as its reference to generate its internal 100MHz clock via a PLL (Phase Locked Loop) circuit | <img src="/docs/01 - Microcontroller Units/Images/14 X1.jpg" width="120"> |
 | X2: 32kHz Crystal | Powers RTC (Real Time Clock -> a low power clock that keeps time even when the main chip is in sleep mode)| <img src="/docs/01 - Microcontroller Units/Images/15 X2.jpg" width="120"> |
-| SB2: 3.3V Regulator Output | Controls the 3.3V power output on the Arduino headers. Default state is on. Used by LPM01A to understand the supply voltage during measurement. | <img src="/docs/01 - Microcontroller Units/Images/16 SB2.jpg" width="120"> |
+| SB2: Solder bridge | Controls the 3.3V power output on the Arduino headers. Default state is on. Used by LPM01A to understand the supply voltage during measurement. | <img src="/docs/01 - Microcontroller Units/Images/16 SB2.jpg" width="120"> |
 
 <br>
 
@@ -84,6 +84,18 @@ STM32  F   4   11  R   E   T   6
   <br>
   <em> Fig 3: Arduino and ST morpho layout </em>
 </p>
+
+
+
+## Why NUCLEO-F411RE?
+
+<b>The ARM Cortex-M4 is the established reference platform for lightweight PQC evaluation</b>
+
+Saarinen states that “NIST has adopted ARM Cortex-M4 CPU as their reference platform for lightweight PQC algorithm evaluation” in his energy analysis of post-quantum cryptographic candidates. The study implemented the algorithms on the NUCLEO-F411RE, selected specifically because it supports direct external power measurement with reduced interference from peripherals. Adopting the same Cortex-M4 platform and NUCLEO-F411RE board, ensures that its measurements remain directly comparable with established benchmarking literature and prior NIST-aligned PQC evaluations.
+
+<b>The IDD jumper enables current measurement without any hardware modification</b>
+
+The NUCLEO-F411RE includes a dedicated current measurement jumper (JP6) specifically designed for this purpose. Combined with the Arduino header compatibility of the X-NUCLEO-LPM01A, the complete measurement setup requires no soldering, no PCB modification, and no custom hardware, thus, reducing experimental error introduced by hardware changes.
 
 
 ## References
