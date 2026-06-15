@@ -65,7 +65,7 @@ STM32  F   4   11  R   E   T   6
 | CN-4: Serial Wire Debug | External debug interface | <img src="/docs/01 - Microcontroller Units/Images/03 CN4.jpg" width="120"> |
 | U2: ST-Link Chip | The square chip at the top half of board, aka programmer/debugger chip. Used to flash code. Talks to PC via USB and programs STM32 via SWD | <img src="/docs/01 - Microcontroller Units/Images/04 U2.jpg" width="120">
 | U5: STM32F411RE | Main microcontroller, with 64 pins. Has all timers, GPIO, Flash, RAM, etc | <img src="/docs/01 - Microcontroller Units/Images/05 STM MCU.jpg" width="120"> |
-| JP6: IDD Jumper | Power path switch for energy measurement. When removed, all power to the STM32 flows through the LPM01A's measurement circuit | <img src="/docs/01 - Microcontroller Units/Images/06 JP6.jpg" width="120"> |
+| JP6: IDD Jumper | Power path switch for energy measurement. When removed, all power to the STM32 flows through the LPM01A's measurement circuit. If removed without connecting an ammeter, the MCU will have no power and won't run | <img src="/docs/01 - Microcontroller Units/Images/06 JP6.jpg" width="120"> |
 | B1: USER Button | Blue button, connected to GPIO pin PC13. Can read its state in code | <img src="/docs/01 - Microcontroller Units/Images/07 UserButton.jpg" width="120"> |
 |B2: RESET Button | Black button, resets STM32. Program restarts, Flash memory is preserved | <img src="/docs/01 - Microcontroller Units/Images/08 ResetButton.jpg" width="120"> |
 | LD1: Red/Green LED (COM) | ST-LINK communication indicator. Cannot be controlled |   |

@@ -42,4 +42,4 @@ Energy (E) = V x I x t
 
 ## References
 
-1. [STMicroelectronics (2021) UM2243 — User Manual: X-NUCLEO-LPM01A STM32 Power Shield](/docs/02%20-%20Power%20Measurement%20Shield/References/um2243-stm32-power-shield-xnucleoLPM01A-stmicroelectronics.pdf)
+1. [STMicroelectronics (2021) UM2243 User Manual: X-NUCLEO-LPM01A STM32 Power Shield](/docs/02%20-%20Power%20Measurement%20Shield/References/um2243-stm32-power-shield-xnucleoLPM01A-stmicroelectronics.pdf)
