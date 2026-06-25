@@ -44,9 +44,26 @@ The build output confirmed that the problem was not related to the ASCON impleme
 The issue appeared during the connection stage between STM32CubeIDE and the STM32 target board.
 
 
-### Root Cause Identification
+<b> Root Cause Identification </b>
 
 Performed a search via, ```where STLinkServer.exe``` and ```Get-ChildItem "C:\Program Files" -Recurse -Filter "*STLink*"```
 
 The search did not find ```STLinkServer.exe```. This indicated that the ST-LINK server component was not installed.
+
+<b> Solution </b>
+
+I downloaded and installed the official STMicroelectronics ST-LINK Server package.
+
+The windows installer ```st-stlink-server.2.1.1-1.msi``` was exectued and the server was manually started using PowerShell. the output indicated that the ST-LINK server was running and listening for connections from STM32CubeIDE.
+
+
+After starting the ST-LINK server:
+
+STM32CubeIDE was reopened. The ASCON project was launched using Debug mode. The program then executed on the STM32 board. UART communication was verified using Tera Term, This confirmed successful execution of the ASCON encryption implementation on the STM32 hardware.
+
+
+### References
+
+1. Software Module Downloaded: https://www.st.com/en/development-tools/st-link-server.html
+2. ST-Link Manual: https://www.st.com/resource/en/user_manual/um2576-stlink-server-stmicroelectronics.pdf
 
