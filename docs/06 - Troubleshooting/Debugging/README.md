@@ -23,9 +23,30 @@ Steps followed:
 After the upgrade, the X-NUCLEO-LPM01A was detected successfully by STM32CubeMonitor-Power.
 
 
-## References
+### References
 
 1. Detailed steps on installing the latest firmware: https://community.st.com/stm32-mcus-60/how-can-i-upgrade-my-x-nucleo-lpm01a-s-firmware-119
 2. Latest Firmware: https://www.st.com/en/development-tools/stm32-lpm01-xn.html
 3. Community post: https://community.st.com/stm32cubemonitor-mcus-31/lpm01a-cannot-connect-to-stm32cubemonitor-power-11568
+
+## 2. Troubleshooting ST-LINK Server Connection Issue in STM32CubeIDE
+
+<b> Problem: </b> While attempting to run the ASCON encryption application on the STM32 Nucleo board using STM32CubeIDE, the project was successfully compiled, but the program could not be launched on the target device.
+
+When clicking the Run button the following error message was displayed: ```ST-Link service required to launch the debug session```
+
+The build output confirmed that the problem was not related to the ASCON implementation or C code because:
+
+- The project compiled successfully.
+- The generated .elf file was created.
+- No compiler warnings or errors were reported.
+
+The issue appeared during the connection stage between STM32CubeIDE and the STM32 target board.
+
+
+### Root Cause Identification
+
+Performed a search via, ```where STLinkServer.exe``` and ```Get-ChildItem "C:\Program Files" -Recurse -Filter "*STLink*"```
+
+The search did not find ```STLinkServer.exe```. This indicated that the ST-LINK server component was not installed.
 
