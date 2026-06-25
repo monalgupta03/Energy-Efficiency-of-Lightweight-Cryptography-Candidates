@@ -9,8 +9,8 @@ It is asynchronous, serial (one bit by bit), point to point.
 
 UART message structure: ``` Idle -> Start Bit -> Data -> Parity -> Stop Bit ```
 
-Idle | Start | D0 | D1 | D2 | D3 | D4 | D5 | D6 | D7 | Stop |
-  1  |   0   |                Data Bits               |   1  |
+Idle | Start | D0 | D1 | D2 | D3 | D4 | D5 | D6 | D7 | Stop | <br>
+  1  |   0   |                Data Bits              |   1  |
 
 Eg: 115200 baud, <b>8</b> data bits, <b>N</b>o parity, <b>1</b> stop bit is called 8N1
 
@@ -81,5 +81,5 @@ Possible causes:
 
 Initially tried PuTTY for the serial terminal application. However, no UART output was observed despite using the same serial settings. Therefore, shifted to TeraTerm for all subsequent UART verification and debugging.
 
-
+##
 Note: The NUCLEO board's onboard ST-Link debugger provides a Virtual COM Port (VCP). When connected via USB, Windows detects this as a serial device (COM5 in this setup), allowing UART messages to be viewed using a terminal application.
