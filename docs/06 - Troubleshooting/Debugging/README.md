@@ -67,3 +67,19 @@ STM32CubeIDE was reopened. The ASCON project was launched using Debug mode. The 
 1. Software Module Downloaded: https://www.st.com/en/development-tools/st-link-server.html
 2. ST-Link Manual: https://www.st.com/resource/en/user_manual/um2576-stlink-server-stmicroelectronics.pdf
 
+
+### Note:
+
+Ascon was compiling and running in its previous attempts. it was after the powershiled was connected (and its firmware was updated) that this issue started to occur.
+
+Possible reasons:
+
+<b> ST-Link connection state changed (most likely). </b> Initially, STM32CubeIDE could directly communicate with the Nucleo board through the onboard ST-Link. If something interrupted that connection, CubeIDE may switch to requiring an external ST-Link server.
+
+Possible triggers:
+
+- Disconnecting/reconnecting USB
+- Changing jumpers on the Nucleo board
+- Powering the board from another source
+- Connecting the X-NUCLEO-LPM01A PowerShield
+
