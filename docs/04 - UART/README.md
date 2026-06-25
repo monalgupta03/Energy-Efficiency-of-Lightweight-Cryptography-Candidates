@@ -7,15 +7,12 @@ It is asynchronous, serial (one bit by bit), point to point.
 
 <b>Asynchronous</b>: Has no clock wire, instead has TX, RX, GND. both the devices agree beforehand on common bits/sec called <b>baud rate</b>. Garbage characters appear when STM32 baud ≠ Terminal baud.
 
-UART message structure: ``` Idle -> Start Bit -> Data -> Parity -> Stop Bit ```
-
-Idle | Start | D0 | D1 | D2 | D3 | D4 | D5 | D6 | D7 | Stop | <br>
-  1  |   0   |                Data Bits              |   1  |
+UART message structure: ``` Idle [1] -> Start Bit [0] -> Data [D0-D7] -> Parity -> Stop Bit [1] ```
 
 Eg: 115200 baud, <b>8</b> data bits, <b>N</b>o parity, <b>1</b> stop bit is called 8N1
 
 
-## for dissertation
+## For dissertation
 
 Via CubeMX,
 
