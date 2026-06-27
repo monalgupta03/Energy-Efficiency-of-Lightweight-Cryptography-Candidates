@@ -4,7 +4,11 @@
 
 <b> Problem: </b> The X-NUCLEO-LPM01A Power Measurement Shield was not detected by STM32CubeMonitor-Power, preventing current and energy measurements.
 
-Tried changing hte USb cable, yet the issue persisted. Later on one of the community page i found someone had a similar issue and had it resolved after updating the firmware.
+Tried changing hte USB cable, yet the issue persisted. 
+
+<b> Solution </b> 
+
+Later on one of the community pages i found someone had a similar issue and had it resolved after updating the firmware.
 
 The pre-installed firmware version was 1.0.1. I updated it to 1.0.8 (latest at the time of writing).
 
@@ -28,6 +32,8 @@ After the upgrade, the X-NUCLEO-LPM01A was detected successfully by STM32CubeMon
 1. Detailed steps on installing the latest firmware: https://community.st.com/stm32-mcus-60/how-can-i-upgrade-my-x-nucleo-lpm01a-s-firmware-119
 2. Latest Firmware: https://www.st.com/en/development-tools/stm32-lpm01-xn.html
 3. Community post: https://community.st.com/stm32cubemonitor-mcus-31/lpm01a-cannot-connect-to-stm32cubemonitor-power-11568
+
+
 
 ## 2. Troubleshooting ST-LINK Server Connection Issue in STM32CubeIDE
 
@@ -82,4 +88,53 @@ Possible triggers:
 - Changing jumpers on the Nucleo board
 - Powering the board from another source
 - Connecting the X-NUCLEO-LPM01A PowerShield
+
+
+
+## 3. LED Staying On Forever After Button Press
+
+<b> Problem: </b> After flashing the ASCON encryption application, pressing the blue user button (B1) caused LD2 to turn on but never turn off, the board appeared to hang indefinitely. The only recovery was a hardware reset.
+
+<b> Root Cause </b>
+
+The `run_ascon()` function was being called directly from inside the interrupt handler `HAL_GPIO_EXTI_Callback()`. This function contains `HAL_Delay()` calls, which rely on the SysTick timer interrupt to count milliseconds.
+
+Since `run_ascon()` was executing inside an interrupt context, the SysTick interrupt could not preempt it (both were at the same priority level). This caused `HAL_Delay()` to wait forever, hanging the MCU at the point LD2 was turned on.
+
+```c
+// Problematic code
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+   if(GPIO_Pin == B1_Pin){
+      // HAL_Delay() inside here will hang forever
+      run_ascon(); 
+   }
+}
+```
+
+<b> Solution </b>
+
+The fix was to keep the interrupt handler as short as possible, only setting a flag and move the actual work into the main loop, where `HAL_Delay()` operates normally.
+
+```c
+// In interrupt, just setting flag
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+    if(GPIO_Pin == B1_Pin){
+      button_pressed = 1;
+   }
+}
+
+// In main loop
+while (1)
+{
+    if(button_pressed){
+        button_pressed = 0;
+        run_ascon();
+    }
+}
+```
+
+After this change, pressing B1 correctly triggered the encryption routine, with LD2 turning on, flashing during the 1000 encryption iterations, and turning off cleanly upon completion.
+
 
