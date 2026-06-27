@@ -103,8 +103,7 @@ Since `run_ascon()` was executing inside an interrupt context, the SysTick inter
 
 ```c
 // Problematic code
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-{
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
    if(GPIO_Pin == B1_Pin){
       // HAL_Delay() inside here will hang forever
       run_ascon(); 
@@ -118,16 +117,14 @@ The fix was to keep the interrupt handler as short as possible, only setting a f
 
 ```c
 // In interrupt, just setting flag
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-{
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
     if(GPIO_Pin == B1_Pin){
       button_pressed = 1;
    }
 }
 
 // In main loop
-while (1)
-{
+while (1){
     if(button_pressed){
         button_pressed = 0;
         run_ascon();
@@ -138,3 +135,51 @@ while (1)
 After this change, pressing B1 correctly triggered the encryption routine, with LD2 turning on, flashing during the 1000 encryption iterations, and turning off cleanly upon completion.
 
 
+
+## 4. ASCON Encryption Not Triggering on Blue Button Press When Powered via X-NUCLEO-LPM01A
+
+<b> Problem: </b> After successfully flashing the ASCON encryption application and confirming it worked over USB, the blue user button (B1) stopped responding when the board was powered through the X-NUCLEO-LPM01A PowerShield. The LD2 LED, which is used to indicate encryption activity, showed no response on button press.
+
+<b> Observed Behaviour </b>
+
+When powered via USB:
+- Pressing B1 triggered the interrupt correctly
+- LD2 turned on, flashed during encryption, then turned off
+
+When powered via X-NUCLEO-LPM01A (JP5 set to E5V):
+- LD1 blinked red (ST-LINK searching for USB host, expected with no USB connected)
+- LD3 lit up red, confirming 3.3V power was present
+- Pressing B1 produced no response from LD2
+
+<b> Initial Suspicion </b>
+
+Since LD3 was on, power was reaching the MCU. The code was also confirmed to be properly flashed prior to switching power sources. This ruled out a flashing or power issue and pointed toward either:
+
+- The MCU being left in a halted state from a previous debug session
+- The button interrupt not firing due to a PowerShield pin conflict
+
+<b> Debugging Steps </b>
+
+Initially the code was flashed using Debug mode in STM32CubeIDE, followed by Resume then Terminate. This was found to sometimes leave the MCU in a halted state rather than running freely. Switching to Run mode and pressing the hardware reset button after flashing resolved this for USB-powered testing.
+
+To isolate whether the MCU was running at all under PowerShield power, a heartbeat was added to the main loop:
+
+```c
+while (1){
+    HAL_GPIO_TogglePin(GPIOA, LD2_Pin);
+    HAL_Delay(500);
+
+    if(button_pressed){
+        button_pressed = 0;
+        run_ascon();
+    }
+}
+```
+
+This allowed visual confirmation of whether the MCU was executing code independently of the button.
+
+<b> Root Cause </b>
+
+Work in progress: 
+
+- **NRST being held low** — if the PowerShield drives the NRST pin, the MCU may be stuck in reset despite LD3 indicating voltage is present.
